@@ -1,5 +1,8 @@
 # Recurator
 
+[![Gem Version](https://badge.fury.io/rb/recurator.png)](http://badge.fury.io/rb/recurator)
+[![Build Status](https://travis-ci.org/ksss/Recurator.png?branch=master)](https://travis-ci.org/ksss/Recurator)
+
 Recurator is object for recursive processing like Enumeator.
 
 Recurator is included `Enumeable` module.
