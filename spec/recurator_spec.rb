@@ -7,16 +7,20 @@ describe Recurator do
         "two" => {
           "three" => 3
         }
-    }
+      }
     })
   end
 
   it "initialize" do
-    Recurator.new({})
+    expect(Recurator.new([])).to be_a_instance_of(Recurator)
+    expect(Recurator.new({})).to be_a_instance_of(Recurator)
+    expect([].to_recur).to be_a_instance_of(Recurator)
+    expect({}.to_recur).to be_a_instance_of(Recurator)
   end
 
   it "include Enumerable" do
-    Recurator.include?(Enumerable)
+    expect(Recurator).to include(Enumerable)
+    expect(Recurator.new({}).to_enum).to be_a_instance_of(Enumerator)
   end
 
   it "each" do
@@ -29,5 +33,9 @@ describe Recurator do
 
   it "keys" do
     expect(recur.keys).to eq(["one","two","three"])
+  end
+
+  it "values" do
+    expect(recur.values).to eq([{"two"=>{"three"=>3}}, {"three"=>3}, 3])
   end
 end
